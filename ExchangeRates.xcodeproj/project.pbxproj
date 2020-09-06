@@ -7,23 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C9E32A62503DA04002D2A2E /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9E32A52503DA04002D2A2E /* API.swift */; };
+		0C9E32A82503DA15002D2A2E /* APISceme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9E32A72503DA15002D2A2E /* APISceme.swift */; };
+		0C9E32AE2503DABE002D2A2E /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9E32AD2503DABE002D2A2E /* MainPresenter.swift */; };
+		0C9E32B02503DDD8002D2A2E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9E32AF2503DDD8002D2A2E /* MainViewController.swift */; };
+		0C9E32B22503F92D002D2A2E /* DateFormatter + extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9E32B12503F92D002D2A2E /* DateFormatter + extention.swift */; };
+		0C9E32B42503F992002D2A2E /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9E32B32503F992002D2A2E /* ModuleBuilder.swift */; };
+		0C9E32B82503FBD8002D2A2E /* Date + extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9E32B72503FBD8002D2A2E /* Date + extention.swift */; };
+		0C9E32BA250400D1002D2A2E /* GraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9E32B9250400D1002D2A2E /* GraphCell.swift */; };
 		0CD3DDFC2503A29C009EBF3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD3DDFB2503A29C009EBF3B /* AppDelegate.swift */; };
 		0CD3DDFE2503A29C009EBF3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD3DDFD2503A29C009EBF3B /* SceneDelegate.swift */; };
-		0CD3DE002503A29C009EBF3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD3DDFF2503A29C009EBF3B /* ViewController.swift */; };
-		0CD3DE032503A29C009EBF3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CD3DE012503A29C009EBF3B /* Main.storyboard */; };
 		0CD3DE052503A29D009EBF3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CD3DE042503A29D009EBF3B /* Assets.xcassets */; };
 		0CD3DE082503A29D009EBF3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CD3DE062503A29D009EBF3B /* LaunchScreen.storyboard */; };
+		0CD3DE112503A2E9009EBF3B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD3DE102503A2E9009EBF3B /* NetworkService.swift */; };
+		0CD3DE142503D047009EBF3B /* RateWrapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD3DE132503D047009EBF3B /* RateWrapped.swift */; };
+		0CD3DE182503D0A2009EBF3B /* Calendar + extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD3DE172503D0A2009EBF3B /* Calendar + extention.swift */; };
+		0CD3DE1A2503D0C7009EBF3B /* UIDatePicker + extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD3DE192503D0C7009EBF3B /* UIDatePicker + extention.swift */; };
+		0CD3DE1C2503D0F6009EBF3B /* DateWrapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD3DE1B2503D0F6009EBF3B /* DateWrapped.swift */; };
+		0CD3DE1E2503D115009EBF3B /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD3DE1D2503D115009EBF3B /* Rate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C9E32A52503DA04002D2A2E /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		0C9E32A72503DA15002D2A2E /* APISceme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISceme.swift; sourceTree = "<group>"; };
+		0C9E32AD2503DABE002D2A2E /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
+		0C9E32AF2503DDD8002D2A2E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0C9E32B12503F92D002D2A2E /* DateFormatter + extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter + extention.swift"; sourceTree = "<group>"; };
+		0C9E32B32503F992002D2A2E /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
+		0C9E32B72503FBD8002D2A2E /* Date + extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + extention.swift"; sourceTree = "<group>"; };
+		0C9E32B9250400D1002D2A2E /* GraphCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphCell.swift; sourceTree = "<group>"; };
 		0CD3DDF82503A29C009EBF3B /* ExchangeRates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeRates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CD3DDFB2503A29C009EBF3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CD3DDFD2503A29C009EBF3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0CD3DDFF2503A29C009EBF3B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0CD3DE022503A29C009EBF3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0CD3DE042503A29D009EBF3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CD3DE072503A29D009EBF3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0CD3DE092503A29D009EBF3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CD3DE102503A2E9009EBF3B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		0CD3DE132503D047009EBF3B /* RateWrapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateWrapped.swift; sourceTree = "<group>"; };
+		0CD3DE172503D0A2009EBF3B /* Calendar + extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar + extention.swift"; sourceTree = "<group>"; };
+		0CD3DE192503D0C7009EBF3B /* UIDatePicker + extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDatePicker + extention.swift"; sourceTree = "<group>"; };
+		0CD3DE1B2503D0F6009EBF3B /* DateWrapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateWrapped.swift; sourceTree = "<group>"; };
+		0CD3DE1D2503D115009EBF3B /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +61,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C9E32A92503DA7E002D2A2E /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				0C9E32AB2503DA8B002D2A2E /* View */,
+				0C9E32AA2503DA88002D2A2E /* Presenter */,
+				0C9E32AC2503DA96002D2A2E /* Model */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
+		0C9E32AA2503DA88002D2A2E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				0C9E32AD2503DABE002D2A2E /* MainPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		0C9E32AB2503DA8B002D2A2E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0C9E32AF2503DDD8002D2A2E /* MainViewController.swift */,
+				0C9E32B9250400D1002D2A2E /* GraphCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0C9E32AC2503DA96002D2A2E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		0CD3DDEF2503A29C009EBF3B = {
 			isa = PBXGroup;
 			children = (
@@ -58,13 +116,71 @@
 			children = (
 				0CD3DDFB2503A29C009EBF3B /* AppDelegate.swift */,
 				0CD3DDFD2503A29C009EBF3B /* SceneDelegate.swift */,
-				0CD3DDFF2503A29C009EBF3B /* ViewController.swift */,
-				0CD3DE012503A29C009EBF3B /* Main.storyboard */,
+				0C9E32B32503F992002D2A2E /* ModuleBuilder.swift */,
+				0CD3DE0F2503A2D5009EBF3B /* Services */,
+				0C9E32A92503DA7E002D2A2E /* MainModule */,
+				0CD3DE122503CFEC009EBF3B /* Model */,
+				0CD3DE152503D07B009EBF3B /* Helpers */,
 				0CD3DE042503A29D009EBF3B /* Assets.xcassets */,
 				0CD3DE062503A29D009EBF3B /* LaunchScreen.storyboard */,
 				0CD3DE092503A29D009EBF3B /* Info.plist */,
 			);
 			path = ExchangeRates;
+			sourceTree = "<group>";
+		};
+		0CD3DE0F2503A2D5009EBF3B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0CD3DE1F2503D99B009EBF3B /* Networking */,
+				0CD3DE202503D9A4009EBF3B /* API */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0CD3DE122503CFEC009EBF3B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0CD3DE132503D047009EBF3B /* RateWrapped.swift */,
+				0CD3DE1D2503D115009EBF3B /* Rate.swift */,
+				0CD3DE1B2503D0F6009EBF3B /* DateWrapped.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0CD3DE152503D07B009EBF3B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0CD3DE162503D082009EBF3B /* Extentions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0CD3DE162503D082009EBF3B /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				0CD3DE172503D0A2009EBF3B /* Calendar + extention.swift */,
+				0CD3DE192503D0C7009EBF3B /* UIDatePicker + extention.swift */,
+				0C9E32B12503F92D002D2A2E /* DateFormatter + extention.swift */,
+				0C9E32B72503FBD8002D2A2E /* Date + extention.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		0CD3DE1F2503D99B009EBF3B /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				0CD3DE102503A2E9009EBF3B /* NetworkService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		0CD3DE202503D9A4009EBF3B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				0C9E32A52503DA04002D2A2E /* API.swift */,
+				0C9E32A72503DA15002D2A2E /* APISceme.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +243,6 @@
 			files = (
 				0CD3DE082503A29D009EBF3B /* LaunchScreen.storyboard in Resources */,
 				0CD3DE052503A29D009EBF3B /* Assets.xcassets in Resources */,
-				0CD3DE032503A29C009EBF3B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +253,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CD3DE002503A29C009EBF3B /* ViewController.swift in Sources */,
+				0CD3DE1A2503D0C7009EBF3B /* UIDatePicker + extention.swift in Sources */,
+				0C9E32B02503DDD8002D2A2E /* MainViewController.swift in Sources */,
+				0CD3DE182503D0A2009EBF3B /* Calendar + extention.swift in Sources */,
 				0CD3DDFC2503A29C009EBF3B /* AppDelegate.swift in Sources */,
+				0C9E32A62503DA04002D2A2E /* API.swift in Sources */,
+				0C9E32B82503FBD8002D2A2E /* Date + extention.swift in Sources */,
+				0CD3DE112503A2E9009EBF3B /* NetworkService.swift in Sources */,
+				0CD3DE1C2503D0F6009EBF3B /* DateWrapped.swift in Sources */,
+				0C9E32AE2503DABE002D2A2E /* MainPresenter.swift in Sources */,
+				0CD3DE1E2503D115009EBF3B /* Rate.swift in Sources */,
+				0C9E32A82503DA15002D2A2E /* APISceme.swift in Sources */,
+				0CD3DE142503D047009EBF3B /* RateWrapped.swift in Sources */,
+				0C9E32BA250400D1002D2A2E /* GraphCell.swift in Sources */,
+				0C9E32B42503F992002D2A2E /* ModuleBuilder.swift in Sources */,
+				0C9E32B22503F92D002D2A2E /* DateFormatter + extention.swift in Sources */,
 				0CD3DDFE2503A29C009EBF3B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +275,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0CD3DE012503A29C009EBF3B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0CD3DE022503A29C009EBF3B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0CD3DE062503A29D009EBF3B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
