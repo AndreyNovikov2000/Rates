@@ -15,6 +15,8 @@
 		0C9E32B42503F992002D2A2E /* ModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9E32B32503F992002D2A2E /* ModuleBuilder.swift */; };
 		0C9E32B82503FBD8002D2A2E /* Date + extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9E32B72503FBD8002D2A2E /* Date + extention.swift */; };
 		0C9E32BA250400D1002D2A2E /* GraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9E32B9250400D1002D2A2E /* GraphCell.swift */; };
+		0C9E32BD2504EE0D002D2A2E /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9E32BC2504EE0D002D2A2E /* GraphView.swift */; };
+		0C9E32C225063364002D2A2E /* GraphConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9E32C125063364002D2A2E /* GraphConstants.swift */; };
 		0CD3DDFC2503A29C009EBF3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD3DDFB2503A29C009EBF3B /* AppDelegate.swift */; };
 		0CD3DDFE2503A29C009EBF3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD3DDFD2503A29C009EBF3B /* SceneDelegate.swift */; };
 		0CD3DE052503A29D009EBF3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CD3DE042503A29D009EBF3B /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 		0C9E32B32503F992002D2A2E /* ModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleBuilder.swift; sourceTree = "<group>"; };
 		0C9E32B72503FBD8002D2A2E /* Date + extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + extention.swift"; sourceTree = "<group>"; };
 		0C9E32B9250400D1002D2A2E /* GraphCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphCell.swift; sourceTree = "<group>"; };
+		0C9E32BC2504EE0D002D2A2E /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
+		0C9E32C125063364002D2A2E /* GraphConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphConstants.swift; sourceTree = "<group>"; };
 		0CD3DDF82503A29C009EBF3B /* ExchangeRates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeRates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CD3DDFB2503A29C009EBF3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CD3DDFD2503A29C009EBF3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,8 +95,27 @@
 		0C9E32AC2503DA96002D2A2E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0CD3DE132503D047009EBF3B /* RateWrapped.swift */,
+				0CD3DE1D2503D115009EBF3B /* Rate.swift */,
+				0CD3DE1B2503D0F6009EBF3B /* DateWrapped.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		0C9E32BB2504EE01002D2A2E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0C9E32BC2504EE0D002D2A2E /* GraphView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0C9E32C025063346002D2A2E /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				0C9E32C125063364002D2A2E /* GraphConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		0CD3DDEF2503A29C009EBF3B = {
@@ -119,7 +142,6 @@
 				0C9E32B32503F992002D2A2E /* ModuleBuilder.swift */,
 				0CD3DE0F2503A2D5009EBF3B /* Services */,
 				0C9E32A92503DA7E002D2A2E /* MainModule */,
-				0CD3DE122503CFEC009EBF3B /* Model */,
 				0CD3DE152503D07B009EBF3B /* Helpers */,
 				0CD3DE042503A29D009EBF3B /* Assets.xcassets */,
 				0CD3DE062503A29D009EBF3B /* LaunchScreen.storyboard */,
@@ -137,19 +159,11 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		0CD3DE122503CFEC009EBF3B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				0CD3DE132503D047009EBF3B /* RateWrapped.swift */,
-				0CD3DE1D2503D115009EBF3B /* Rate.swift */,
-				0CD3DE1B2503D0F6009EBF3B /* DateWrapped.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		0CD3DE152503D07B009EBF3B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				0C9E32C025063346002D2A2E /* Constants */,
+				0C9E32BB2504EE01002D2A2E /* Views */,
 				0CD3DE162503D082009EBF3B /* Extentions */,
 			);
 			path = Helpers;
@@ -253,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C9E32C225063364002D2A2E /* GraphConstants.swift in Sources */,
 				0CD3DE1A2503D0C7009EBF3B /* UIDatePicker + extention.swift in Sources */,
 				0C9E32B02503DDD8002D2A2E /* MainViewController.swift in Sources */,
 				0CD3DE182503D0A2009EBF3B /* Calendar + extention.swift in Sources */,
@@ -266,6 +281,7 @@
 				0C9E32A82503DA15002D2A2E /* APISceme.swift in Sources */,
 				0CD3DE142503D047009EBF3B /* RateWrapped.swift in Sources */,
 				0C9E32BA250400D1002D2A2E /* GraphCell.swift in Sources */,
+				0C9E32BD2504EE0D002D2A2E /* GraphView.swift in Sources */,
 				0C9E32B42503F992002D2A2E /* ModuleBuilder.swift in Sources */,
 				0C9E32B22503F92D002D2A2E /* DateFormatter + extention.swift in Sources */,
 				0CD3DDFE2503A29C009EBF3B /* SceneDelegate.swift in Sources */,

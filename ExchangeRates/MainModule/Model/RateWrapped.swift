@@ -17,6 +17,11 @@ struct RateWrapped {
     var base: String
     var rates: [Rate]
     
+    private let allRates = ["AED", "AFN", "ALL",
+                                "ARS", "AUD", "BAM",
+                                "BBD", "ZMW", "XPF",
+                                "XOF", "XAF", "UZS"]
+    
     // MARK: - Init
     
     init() {
@@ -37,8 +42,6 @@ struct RateWrapped {
     // MARK: - Public methods
     
     func getRateWrapped(fromDictionary dictionary: [String: Any], dateWrapped: DateWrapped) -> RateWrapped {
-        let allRates = ["AED", "AFN", "ALL", "ARS", "AUD", "BAM", "BBD", "ZMW"]
-        
         let rates = dictionary["rates"] as? [String: Any]
         let ratesCount = rates?.keys.count ?? 0
         

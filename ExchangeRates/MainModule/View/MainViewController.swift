@@ -10,6 +10,13 @@ import UIKit
 
 class MainViewController: UIViewController {
     
+   
+    // MARK: - Proprties
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     var presenter: MainPresenterProtocol?
     
     // MARK: - Private properties
@@ -29,8 +36,8 @@ class MainViewController: UIViewController {
         
         setupCollectionView()
         setupDiffableDataSorce()
-        
-        view.backgroundColor = .white
+
+        view.backgroundColor = .black
     }
     
     // MARK: - Setup
@@ -40,9 +47,7 @@ class MainViewController: UIViewController {
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.collectionViewLayout = setupCompositionLayout()
         collectionView.register(GraphCell.self, forCellWithReuseIdentifier: GraphCell.reuseId)
-        collectionView.contentInset = UIEdgeInsets(top: 30, left: 0, bottom: 16, right: 0)
-        collectionView.backgroundColor = .white
-        
+        collectionView.backgroundColor = .black
         
         view.addSubview(collectionView)
     }
@@ -64,24 +69,26 @@ class MainViewController: UIViewController {
         
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets.bottom = 3
         
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(70))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-        group.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 16, bottom: 0, trailing: 16)
         
         let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets.top = 20
+        section.contentInsets.bottom = 20
         
         return section
     }
     
     private func setupDiffableDataSorce() {
-        dataSource = .init(collectionView: collectionView, cellProvider: { (collectionView, indexPath, rateWrapped) -> UICollectionViewCell? in
+        dataSource = .init(collectionView: collectionView, cellProvider: { (collectionView, indexPath, rate) -> UICollectionViewCell? in
             guard let section = LayoutSections(rawValue: indexPath.section) else { return nil }
             
             switch section  {
             case .graphSection:
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GraphCell.reuseId, for: indexPath) as? GraphCell
-                cell?.backgroundColor = .red
+                cell?.configure(withRate: rate)
                 return cell
             }
         })
