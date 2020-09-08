@@ -10,7 +10,6 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-   
     // MARK: - Proprties
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -25,7 +24,7 @@ class MainViewController: UIViewController {
     private var collectionView: UICollectionView!
     private var dataSource: UICollectionViewDiffableDataSource<LayoutSections, Rate>!
     
-    enum LayoutSections: Int, CaseIterable {
+    private enum LayoutSections: Int, CaseIterable {
         case graphSection
     }
     
@@ -33,14 +32,19 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         presenter?.loadTimeSeriesRates()
-        
-        setupNavigationController()
+    
         setupCollectionView()
         setupDiffableDataSorce()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setupNavigationController()
+    }
+    
     // MARK: - Private methods
-
+    
     private func reloadData() {
         var snapshot = NSDiffableDataSourceSnapshot<LayoutSections, Rate>.init()
         snapshot.appendSections(LayoutSections.allCases)
@@ -61,7 +65,7 @@ extension MainViewController {
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
-
+        
         
         navigationItem.largeTitleDisplayMode = .always
         navigationItem.title = "Series rate"
@@ -142,7 +146,7 @@ extension MainViewController: MainViewProtocol {
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let rate = dataSource.itemIdentifier(for: indexPath) else { return }
-        let detailVC = Builder.buildDetailModule(rate: rate)
+        let detailVC = Builder.buildDetailModule(withRates: rateWrapped.rates, selectedRate: rate)
         navigationController?.pushViewController(detailVC, animated: true)
     }
 }

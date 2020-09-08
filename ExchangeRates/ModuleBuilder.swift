@@ -10,7 +10,7 @@ import UIKit
 
 protocol BuilderProtocol {
     static func buildMainModule() -> UIViewController
-    static func buildDetailModule(rate: Rate) -> UIViewController
+    static func buildDetailModule(withRates rates: [Rate], selectedRate rate: Rate) -> UIViewController
 }
 
 class Builder: BuilderProtocol {
@@ -22,10 +22,10 @@ class Builder: BuilderProtocol {
         return mainViewController
     }
     
-    static func buildDetailModule(rate: Rate) -> UIViewController {
+    static func buildDetailModule(withRates rates: [Rate], selectedRate  rate: Rate) -> UIViewController {
         let networkService = NetworkService()
         let detailViewController = DetailViewController()
-        let detailPresenter = DetailPresenter(view: detailViewController, rate: rate, networkService: networkService)
+        let detailPresenter = DetailPresenter(view: detailViewController, rates: rates, rate: rate, networkService: networkService)
         detailViewController.presenter = detailPresenter
         return detailViewController
     }
