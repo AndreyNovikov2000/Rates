@@ -32,22 +32,48 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter?.loadTimeSeriesRates(fromDate: Date().getDaysAgoFromCurretnDate(days: 30), toDate: Date(), base: "USD")
+        presenter?.loadTimeSeriesRates()
         
+        setupNavigationController()
         setupCollectionView()
         setupDiffableDataSorce()
-
-        view.backgroundColor = .black
     }
     
-    // MARK: - Setup
+    // MARK: - Private methods
+
+    private func reloadData() {
+        var snapshot = NSDiffableDataSourceSnapshot<LayoutSections, Rate>.init()
+        snapshot.appendSections(LayoutSections.allCases)
+        snapshot.appendItems(rateWrapped.rates, toSection: .graphSection)
+        
+        dataSource.apply(snapshot, animatingDifferences: true)
+    }
+    
+}
+
+// MARK: - Setup
+
+extension MainViewController {
+    
+    private func setupNavigationController() {
+        navigationController?.navigationBar.barTintColor = .black
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+
+        
+        navigationItem.largeTitleDisplayMode = .always
+        navigationItem.title = "Series rate"
+    }
     
     private func setupCollectionView() {
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView.backgroundColor = .black
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         collectionView.collectionViewLayout = setupCompositionLayout()
         collectionView.register(GraphCell.self, forCellWithReuseIdentifier: GraphCell.reuseId)
-        collectionView.backgroundColor = .black
+        collectionView.delegate = self
         
         view.addSubview(collectionView)
     }
@@ -95,22 +121,6 @@ class MainViewController: UIViewController {
         
         reloadData()
     }
-    
-    private func reloadData() {
-        var snapshot = NSDiffableDataSourceSnapshot<LayoutSections, Rate>.init()
-        snapshot.appendSections(LayoutSections.allCases)
-        snapshot.appendItems(rateWrapped.rates, toSection: .graphSection)
-        
-        dataSource.apply(snapshot, animatingDifferences: true)
-    }
-    
-}
-
-// MARK: - Setup
-
-extension MainViewController {
-    
-    
 }
 
 // MARK: - MainViewProtocol
@@ -119,11 +129,20 @@ extension MainViewController: MainViewProtocol {
     func getTimeSeriesRates(withResult result: Result<RateWrapped, Error>) {
         switch result {
         case .success(let rateWrapped):
-            print(rateWrapped.rates)
             self.rateWrapped = rateWrapped
             self.reloadData()
         case .failure(let error):
-            print("Error - \(error.localizedDescription)")
+            self.showAlert(title: "Error!", message: error.localizedDescription)
         }
+    }
+}
+
+// MARK: - UIcollectionViewDelegate
+
+extension MainViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let rate = dataSource.itemIdentifier(for: indexPath) else { return }
+        let detailVC = Builder.buildDetailModule(rate: rate)
+        navigationController?.pushViewController(detailVC, animated: true)
     }
 }

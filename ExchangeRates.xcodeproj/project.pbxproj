@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C2271AB25066BF5002BA0F3 /* UIViewController + extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2271AA25066BF5002BA0F3 /* UIViewController + extention.swift */; };
+		0C2271B22506A1B1002BA0F3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2271B02506A1B1002BA0F3 /* DetailViewController.swift */; };
+		0C2271B32506A1B1002BA0F3 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C2271B12506A1B1002BA0F3 /* DetailViewController.xib */; };
+		0C2271B52506A1C4002BA0F3 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2271B42506A1C4002BA0F3 /* DetailPresenter.swift */; };
+		0C2271E225077F5A002BA0F3 /* ExchangeRatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2271E125077F5A002BA0F3 /* ExchangeRatesTests.swift */; };
+		0C2271EC25077F7D002BA0F3 /* RateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2271EB25077F7D002BA0F3 /* RateTest.swift */; };
+		0C2271EE250781EE002BA0F3 /* DateWrappedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2271ED250781EE002BA0F3 /* DateWrappedTest.swift */; };
+		0C2271F025078343002BA0F3 /* RateWrappedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2271EF25078343002BA0F3 /* RateWrappedTest.swift */; };
 		0C9E32A62503DA04002D2A2E /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9E32A52503DA04002D2A2E /* API.swift */; };
 		0C9E32A82503DA15002D2A2E /* APISceme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9E32A72503DA15002D2A2E /* APISceme.swift */; };
 		0C9E32AE2503DABE002D2A2E /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9E32AD2503DABE002D2A2E /* MainPresenter.swift */; };
@@ -29,7 +37,27 @@
 		0CD3DE1E2503D115009EBF3B /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD3DE1D2503D115009EBF3B /* Rate.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0C2271E425077F5A002BA0F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0CD3DDF02503A29C009EBF3B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0CD3DDF72503A29C009EBF3B;
+			remoteInfo = ExchangeRates;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		0C2271AA25066BF5002BA0F3 /* UIViewController + extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + extention.swift"; sourceTree = "<group>"; };
+		0C2271B02506A1B1002BA0F3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0C2271B12506A1B1002BA0F3 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		0C2271B42506A1C4002BA0F3 /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
+		0C2271DF25077F5A002BA0F3 /* ExchangeRatesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExchangeRatesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C2271E125077F5A002BA0F3 /* ExchangeRatesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRatesTests.swift; sourceTree = "<group>"; };
+		0C2271E325077F5A002BA0F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C2271EB25077F7D002BA0F3 /* RateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RateTest.swift; path = ../../../../../../Documents/RateTest.swift; sourceTree = "<group>"; };
+		0C2271ED250781EE002BA0F3 /* DateWrappedTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateWrappedTest.swift; path = ../../../../../../Documents/DateWrappedTest.swift; sourceTree = "<group>"; };
+		0C2271EF25078343002BA0F3 /* RateWrappedTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RateWrappedTest.swift; path = ../../../../../../Documents/RateWrappedTest.swift; sourceTree = "<group>"; };
 		0C9E32A52503DA04002D2A2E /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		0C9E32A72503DA15002D2A2E /* APISceme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISceme.swift; sourceTree = "<group>"; };
 		0C9E32AD2503DABE002D2A2E /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
@@ -55,6 +83,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0C2271DC25077F5A002BA0F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0CD3DDF52503A29C009EBF3B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -65,6 +100,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C2271AC2506A163002BA0F3 /* DetailModule */ = {
+			isa = PBXGroup;
+			children = (
+				0C2271AF2506A187002BA0F3 /* View */,
+				0C2271AE2506A183002BA0F3 /* Presenter */,
+				0C2271AD2506A181002BA0F3 /* Model */,
+			);
+			path = DetailModule;
+			sourceTree = "<group>";
+		};
+		0C2271AD2506A181002BA0F3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0C2271AE2506A183002BA0F3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				0C2271B42506A1C4002BA0F3 /* DetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		0C2271AF2506A187002BA0F3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0C2271B02506A1B1002BA0F3 /* DetailViewController.swift */,
+				0C2271B12506A1B1002BA0F3 /* DetailViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0C2271E025077F5A002BA0F3 /* ExchangeRatesTests */ = {
+			isa = PBXGroup;
+			children = (
+				0C2271E125077F5A002BA0F3 /* ExchangeRatesTests.swift */,
+				0C2271E925077F62002BA0F3 /* MainModuleTests */,
+				0C2271E325077F5A002BA0F3 /* Info.plist */,
+			);
+			path = ExchangeRatesTests;
+			sourceTree = "<group>";
+		};
+		0C2271E925077F62002BA0F3 /* MainModuleTests */ = {
+			isa = PBXGroup;
+			children = (
+				0C2271EA25077F6D002BA0F3 /* ModelTests */,
+			);
+			path = MainModuleTests;
+			sourceTree = "<group>";
+		};
+		0C2271EA25077F6D002BA0F3 /* ModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				0C2271EF25078343002BA0F3 /* RateWrappedTest.swift */,
+				0C2271EB25077F7D002BA0F3 /* RateTest.swift */,
+				0C2271ED250781EE002BA0F3 /* DateWrappedTest.swift */,
+			);
+			path = ModelTests;
+			sourceTree = "<group>";
+		};
 		0C9E32A92503DA7E002D2A2E /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				0CD3DDFA2503A29C009EBF3B /* ExchangeRates */,
+				0C2271E025077F5A002BA0F3 /* ExchangeRatesTests */,
 				0CD3DDF92503A29C009EBF3B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				0CD3DDF82503A29C009EBF3B /* ExchangeRates.app */,
+				0C2271DF25077F5A002BA0F3 /* ExchangeRatesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -142,6 +241,7 @@
 				0C9E32B32503F992002D2A2E /* ModuleBuilder.swift */,
 				0CD3DE0F2503A2D5009EBF3B /* Services */,
 				0C9E32A92503DA7E002D2A2E /* MainModule */,
+				0C2271AC2506A163002BA0F3 /* DetailModule */,
 				0CD3DE152503D07B009EBF3B /* Helpers */,
 				0CD3DE042503A29D009EBF3B /* Assets.xcassets */,
 				0CD3DE062503A29D009EBF3B /* LaunchScreen.storyboard */,
@@ -176,6 +276,7 @@
 				0CD3DE192503D0C7009EBF3B /* UIDatePicker + extention.swift */,
 				0C9E32B12503F92D002D2A2E /* DateFormatter + extention.swift */,
 				0C9E32B72503FBD8002D2A2E /* Date + extention.swift */,
+				0C2271AA25066BF5002BA0F3 /* UIViewController + extention.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -200,6 +301,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0C2271DE25077F5A002BA0F3 /* ExchangeRatesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C2271E625077F5A002BA0F3 /* Build configuration list for PBXNativeTarget "ExchangeRatesTests" */;
+			buildPhases = (
+				0C2271DB25077F5A002BA0F3 /* Sources */,
+				0C2271DC25077F5A002BA0F3 /* Frameworks */,
+				0C2271DD25077F5A002BA0F3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0C2271E525077F5A002BA0F3 /* PBXTargetDependency */,
+			);
+			name = ExchangeRatesTests;
+			productName = ExchangeRatesTests;
+			productReference = 0C2271DF25077F5A002BA0F3 /* ExchangeRatesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		0CD3DDF72503A29C009EBF3B /* ExchangeRates */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0CD3DE0C2503A29D009EBF3B /* Build configuration list for PBXNativeTarget "ExchangeRates" */;
@@ -227,6 +346,10 @@
 				LastUpgradeCheck = 1170;
 				ORGANIZATIONNAME = "Andrey Novikov";
 				TargetAttributes = {
+					0C2271DE25077F5A002BA0F3 = {
+						CreatedOnToolsVersion = 11.7;
+						TestTargetID = 0CD3DDF72503A29C009EBF3B;
+					};
 					0CD3DDF72503A29C009EBF3B = {
 						CreatedOnToolsVersion = 11.7;
 					};
@@ -246,16 +369,25 @@
 			projectRoot = "";
 			targets = (
 				0CD3DDF72503A29C009EBF3B /* ExchangeRates */,
+				0C2271DE25077F5A002BA0F3 /* ExchangeRatesTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0C2271DD25077F5A002BA0F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0CD3DDF62503A29C009EBF3B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0CD3DE082503A29D009EBF3B /* LaunchScreen.storyboard in Resources */,
+				0C2271B32506A1B1002BA0F3 /* DetailViewController.xib in Resources */,
 				0CD3DE052503A29D009EBF3B /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,6 +395,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0C2271DB25077F5A002BA0F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0C2271E225077F5A002BA0F3 /* ExchangeRatesTests.swift in Sources */,
+				0C2271EE250781EE002BA0F3 /* DateWrappedTest.swift in Sources */,
+				0C2271EC25077F7D002BA0F3 /* RateTest.swift in Sources */,
+				0C2271F025078343002BA0F3 /* RateWrappedTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0CD3DDF42503A29C009EBF3B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -271,8 +414,11 @@
 				0CD3DE1A2503D0C7009EBF3B /* UIDatePicker + extention.swift in Sources */,
 				0C9E32B02503DDD8002D2A2E /* MainViewController.swift in Sources */,
 				0CD3DE182503D0A2009EBF3B /* Calendar + extention.swift in Sources */,
+				0C2271AB25066BF5002BA0F3 /* UIViewController + extention.swift in Sources */,
+				0C2271B52506A1C4002BA0F3 /* DetailPresenter.swift in Sources */,
 				0CD3DDFC2503A29C009EBF3B /* AppDelegate.swift in Sources */,
 				0C9E32A62503DA04002D2A2E /* API.swift in Sources */,
+				0C2271B22506A1B1002BA0F3 /* DetailViewController.swift in Sources */,
 				0C9E32B82503FBD8002D2A2E /* Date + extention.swift in Sources */,
 				0CD3DE112503A2E9009EBF3B /* NetworkService.swift in Sources */,
 				0CD3DE1C2503D0F6009EBF3B /* DateWrapped.swift in Sources */,
@@ -290,6 +436,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0C2271E525077F5A002BA0F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0CD3DDF72503A29C009EBF3B /* ExchangeRates */;
+			targetProxy = 0C2271E425077F5A002BA0F3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		0CD3DE062503A29D009EBF3B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -302,6 +456,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0C2271E725077F5A002BA0F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C7L2AL6Q55;
+				INFOPLIST_FILE = ExchangeRatesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.andrenovikov.ExchangeRatesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExchangeRates.app/ExchangeRates";
+			};
+			name = Debug;
+		};
+		0C2271E825077F5A002BA0F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C7L2AL6Q55;
+				INFOPLIST_FILE = ExchangeRatesTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ru.andrenovikov.ExchangeRatesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExchangeRates.app/ExchangeRates";
+			};
+			name = Release;
+		};
 		0CD3DE0A2503A29D009EBF3B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -455,6 +649,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0C2271E625077F5A002BA0F3 /* Build configuration list for PBXNativeTarget "ExchangeRatesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0C2271E725077F5A002BA0F3 /* Debug */,
+				0C2271E825077F5A002BA0F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0CD3DDF32503A29C009EBF3B /* Build configuration list for PBXProject "ExchangeRates" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

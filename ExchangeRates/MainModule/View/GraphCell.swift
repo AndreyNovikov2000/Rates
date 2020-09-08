@@ -13,7 +13,6 @@ class GraphCell: UICollectionViewCell {
     
     static let reuseId = "GraphCell"
     
-    
     // MARK: - UI
     
     private let rateNameLabel: UILabel = {
@@ -29,7 +28,6 @@ class GraphCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .boldSystemFont(ofSize: 15)
         label.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
-        label.text = "12.44"
         return label
     }()
     
@@ -47,7 +45,7 @@ class GraphCell: UICollectionViewCell {
     private lazy var graphView: GraphView = {
         let view = GraphView(values: [])
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .red
+        view.backgroundColor = .clear
         return view
     }()
     
@@ -82,6 +80,7 @@ class GraphCell: UICollectionViewCell {
     
     func configure(withRate rate: Rate) {
         rateNameLabel.text = rate.name
+        rateCostLabel.text = rate.lastRateValue
         graphView.redraw(withValues: rate.rateValus.map { CGFloat($0) })
     }
     
@@ -105,8 +104,8 @@ class GraphCell: UICollectionViewCell {
         // graphView
         graphView.trailingAnchor.constraint(equalTo: baseRateNameLabel.leadingAnchor, constant: -17).isActive = true
         graphView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 1/3).isActive = true
-        graphView.topAnchor.constraint(equalTo: topAnchor, constant: 7).isActive = true
-        graphView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -7).isActive = true
+        graphView.topAnchor.constraint(equalTo: topAnchor, constant: 9).isActive = true
+        graphView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -9).isActive = true
         
         // rateNameLabel
         rateNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true

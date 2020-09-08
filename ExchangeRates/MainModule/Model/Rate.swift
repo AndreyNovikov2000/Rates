@@ -11,6 +11,10 @@ import Foundation
 struct Rate {
     var name: String
     var rateValus: [Double]
+    
+    var lastRateValue: String {
+        return String(format: "%.2f", rateValus.last ?? 0)
+    }
 }
 
 extension Rate: Hashable {

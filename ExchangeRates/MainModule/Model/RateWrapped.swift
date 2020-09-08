@@ -17,10 +17,11 @@ struct RateWrapped {
     var base: String
     var rates: [Rate]
     
-    private let allRates = ["AED", "AFN", "ALL",
-                                "ARS", "AUD", "BAM",
-                                "BBD", "ZMW", "XPF",
-                                "XOF", "XAF", "UZS"]
+    private(set) var allRates = ["AED", "AFN", "ALL",
+                                 "ARS", "AUD", "BAM",
+                                 "BBD", "ZMW", "XPF",
+                                 "UZS", "NZD", "OMR",
+                                 "PEN", "PGK", "PYG"]
     
     // MARK: - Init
     

@@ -14,7 +14,7 @@ protocol MainViewProtocol: class {
 
 protocol MainPresenterProtocol {
     init(view: MainViewProtocol, networkService: NetworkServiceProtocol)
-    func loadTimeSeriesRates(fromDate: Date, toDate: Date, base: String)
+    func loadTimeSeriesRates()
 }
 
 class MainPresenter: MainPresenterProtocol {
@@ -36,12 +36,16 @@ class MainPresenter: MainPresenterProtocol {
     
     // MARK: - Methods
     
-    func loadTimeSeriesRates(fromDate: Date, toDate: Date, base: String) {
+    func loadTimeSeriesRates() {
+        let base = "USD"
+        let toDate =  Date()
+        let fromDate = Date().getDaysAgoFromCurretnDate(days: 30)
+        
         let fromDateString = dateFormatter.getDateString(fromDate: fromDate)
         let toDateString = dateFormatter.getDateString(fromDate: toDate)
         let dates = calendar.getAllDates(fromDateString: fromDateString, toDateString: toDateString)
-        
         let apiSceme: APISceme = .timeseries(fromDate: fromDateString, toDate: toDateString, base: base)
+        
         networkService.getTimeSeriesRates(withRatePath: apiSceme) { [weak self] (result) in
             guard let self = self else { return }
             DispatchQueue.main.async {
