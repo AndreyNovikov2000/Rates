@@ -69,3 +69,51 @@ extension Calendar {
         return dates
     }
 }
+
+extension Calendar {
+    
+    struct PastTime {
+        var numberOfComponents: Int
+        var components: Component
+        
+        enum Component {
+            case day
+            case mouth
+            case year
+        }
+    }
+    
+    
+    func getPastTime(fromDate date: Date?) -> PastTime {
+        guard let date = date else { return PastTime(numberOfComponents: 999, components: .day) }
+        let currentDay = Date()
+        let calendar = Calendar.current
+        print(date)
+        
+        let currentYearComponents = calendar.component(.year, from: currentDay)
+        let currentMounthComponents = calendar.component(.month, from: currentDay)
+        let currentDayComponents = calendar.component(.day, from: currentDay)
+        
+        let yearComponents = calendar.component(.year, from: date)
+        let monthComponents = calendar.component(.month, from: date)
+        let dayComponents = calendar.component(.day, from: date)
+        
+        let yearDifference = abs(currentYearComponents - yearComponents)
+        let monthDifference = abs(currentMounthComponents - monthComponents)
+        let dayDifference = abs(currentDayComponents - dayComponents)
+        
+        if  yearDifference >= 1   {
+            return PastTime(numberOfComponents: yearDifference, components: .year)
+        }
+        
+        if dayDifference >= 1 && dayDifference <= 16 {
+            return PastTime(numberOfComponents: dayDifference, components: .day)
+        }
+        
+        if monthDifference >= 1 {
+            return PastTime(numberOfComponents: monthDifference, components: .mouth)
+        }
+        
+        return PastTime(numberOfComponents: 999, components: .day)
+    }
+}

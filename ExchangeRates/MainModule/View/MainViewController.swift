@@ -146,7 +146,6 @@ extension MainViewController: MainViewProtocol {
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let rate = dataSource.itemIdentifier(for: indexPath) else { return }
-        let detailVC = Builder.buildDetailModule(withRates: rateWrapped.rates, selectedRate: rate)
-        navigationController?.pushViewController(detailVC, animated: true)
+        presenter?.didSelectRate(rates: rateWrapped.rates, selectedRate: rate)
     }
 }

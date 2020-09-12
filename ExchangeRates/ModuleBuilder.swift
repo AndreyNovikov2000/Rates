@@ -8,24 +8,26 @@
 
 import UIKit
 
-protocol BuilderProtocol {
-    static func buildMainModule() -> UIViewController
-    static func buildDetailModule(withRates rates: [Rate], selectedRate rate: Rate) -> UIViewController
+
+protocol AssembilityBuilderProtocol {
+    func buildMainModule(_ router: RouterProtocol) -> UIViewController
+    func buildDetailModule(withRouter router: RouterProtocol, rates: [Rate], selectedRate: Rate) -> UIViewController
 }
 
-class Builder: BuilderProtocol {
-    static func buildMainModule() -> UIViewController {
-        let networkService = NetworkService()
+
+class AssembilityBuilder: AssembilityBuilderProtocol {
+    func buildMainModule(_ router: RouterProtocol) -> UIViewController {
         let mainViewController = MainViewController()
-        let mainPresenter = MainPresenter(view: mainViewController, networkService: networkService)
+        let networkService = NetworkService()
+        let mainPresenter = MainPresenter(view: mainViewController, networkService: networkService, router: router)
         mainViewController.presenter = mainPresenter
         return mainViewController
     }
     
-    static func buildDetailModule(withRates rates: [Rate], selectedRate  rate: Rate) -> UIViewController {
-        let networkService = NetworkService()
+    func buildDetailModule(withRouter router: RouterProtocol, rates: [Rate], selectedRate: Rate) -> UIViewController {
         let detailViewController = DetailViewController()
-        let detailPresenter = DetailPresenter(view: detailViewController, rates: rates, rate: rate, networkService: networkService)
+        let networkService = NetworkService()
+        let detailPresenter = DetailPresenter(view: detailViewController, rates: rates, rate: selectedRate, networkService: networkService, router: router)
         detailViewController.presenter = detailPresenter
         return detailViewController
     }

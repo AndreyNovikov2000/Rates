@@ -26,6 +26,8 @@
 		0C9E32BA250400D1002D2A2E /* GraphCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9E32B9250400D1002D2A2E /* GraphCell.swift */; };
 		0C9E32BD2504EE0D002D2A2E /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9E32BC2504EE0D002D2A2E /* GraphView.swift */; };
 		0C9E32C225063364002D2A2E /* GraphConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C9E32C125063364002D2A2E /* GraphConstants.swift */; };
+		0CBC5599250938A500116566 /* RateLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC5598250938A500116566 /* RateLabel.swift */; };
+		0CBC559F250A42E800116566 /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CBC559E250A42E800116566 /* DayCell.swift */; };
 		0CD3DDFC2503A29C009EBF3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD3DDFB2503A29C009EBF3B /* AppDelegate.swift */; };
 		0CD3DDFE2503A29C009EBF3B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD3DDFD2503A29C009EBF3B /* SceneDelegate.swift */; };
 		0CD3DE052503A29D009EBF3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CD3DE042503A29D009EBF3B /* Assets.xcassets */; };
@@ -36,6 +38,11 @@
 		0CD3DE1A2503D0C7009EBF3B /* UIDatePicker + extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD3DE192503D0C7009EBF3B /* UIDatePicker + extention.swift */; };
 		0CD3DE1C2503D0F6009EBF3B /* DateWrapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD3DE1B2503D0F6009EBF3B /* DateWrapped.swift */; };
 		0CD3DE1E2503D115009EBF3B /* Rate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD3DE1D2503D115009EBF3B /* Rate.swift */; };
+		0CDBF69B250BC62000279B61 /* RateInterval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDBF69A250BC62000279B61 /* RateInterval.swift */; };
+		0CDBF69E250CE9DF00279B61 /* RateCellConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDBF69D250CE9DF00279B61 /* RateCellConfigure.swift */; };
+		0CDBF6A0250CEA3B00279B61 /* UIColor + extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDBF69F250CEA3B00279B61 /* UIColor + extention.swift */; };
+		0CDBF6A2250CEB2500279B61 /* UICollectionView + extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDBF6A1250CEB2500279B61 /* UICollectionView + extention.swift */; };
+		0CDBF6A4250D168000279B61 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDBF6A3250D168000279B61 /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +77,8 @@
 		0C9E32B9250400D1002D2A2E /* GraphCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphCell.swift; sourceTree = "<group>"; };
 		0C9E32BC2504EE0D002D2A2E /* GraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		0C9E32C125063364002D2A2E /* GraphConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphConstants.swift; sourceTree = "<group>"; };
+		0CBC5598250938A500116566 /* RateLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateLabel.swift; sourceTree = "<group>"; };
+		0CBC559E250A42E800116566 /* DayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
 		0CD3DDF82503A29C009EBF3B /* ExchangeRates.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeRates.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CD3DDFB2503A29C009EBF3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CD3DDFD2503A29C009EBF3B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +91,11 @@
 		0CD3DE192503D0C7009EBF3B /* UIDatePicker + extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDatePicker + extention.swift"; sourceTree = "<group>"; };
 		0CD3DE1B2503D0F6009EBF3B /* DateWrapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateWrapped.swift; sourceTree = "<group>"; };
 		0CD3DE1D2503D115009EBF3B /* Rate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rate.swift; sourceTree = "<group>"; };
+		0CDBF69A250BC62000279B61 /* RateInterval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateInterval.swift; sourceTree = "<group>"; };
+		0CDBF69D250CE9DF00279B61 /* RateCellConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCellConfigure.swift; sourceTree = "<group>"; };
+		0CDBF69F250CEA3B00279B61 /* UIColor + extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + extention.swift"; sourceTree = "<group>"; };
+		0CDBF6A1250CEB2500279B61 /* UICollectionView + extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView + extention.swift"; sourceTree = "<group>"; };
+		0CDBF6A3250D168000279B61 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +129,7 @@
 		0C2271AD2506A181002BA0F3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0CDBF69A250BC62000279B61 /* RateInterval.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -177,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				0C2271F1250792FB002BA0F3 /* DetailRateCell.swift */,
+				0CBC559E250A42E800116566 /* DayCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -230,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				0C9E32BC2504EE0D002D2A2E /* GraphView.swift */,
+				0CBC5598250938A500116566 /* RateLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -265,7 +282,9 @@
 			children = (
 				0CD3DDFB2503A29C009EBF3B /* AppDelegate.swift */,
 				0CD3DDFD2503A29C009EBF3B /* SceneDelegate.swift */,
+				0CDBF6A3250D168000279B61 /* Router.swift */,
 				0C9E32B32503F992002D2A2E /* ModuleBuilder.swift */,
+				0CDBF69C250CE9D600279B61 /* Protocols */,
 				0CD3DE0F2503A2D5009EBF3B /* Services */,
 				0C9E32A92503DA7E002D2A2E /* MainModule */,
 				0C2271AC2506A163002BA0F3 /* DetailModule */,
@@ -304,6 +323,8 @@
 				0C9E32B12503F92D002D2A2E /* DateFormatter + extention.swift */,
 				0C9E32B72503FBD8002D2A2E /* Date + extention.swift */,
 				0C2271AA25066BF5002BA0F3 /* UIViewController + extention.swift */,
+				0CDBF69F250CEA3B00279B61 /* UIColor + extention.swift */,
+				0CDBF6A1250CEB2500279B61 /* UICollectionView + extention.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -323,6 +344,14 @@
 				0C9E32A72503DA15002D2A2E /* APISceme.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		0CDBF69C250CE9D600279B61 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0CDBF69D250CE9DF00279B61 /* RateCellConfigure.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,20 +473,27 @@
 				0C2271AB25066BF5002BA0F3 /* UIViewController + extention.swift in Sources */,
 				0C2271B52506A1C4002BA0F3 /* DetailPresenter.swift in Sources */,
 				0CD3DDFC2503A29C009EBF3B /* AppDelegate.swift in Sources */,
+				0CDBF6A2250CEB2500279B61 /* UICollectionView + extention.swift in Sources */,
 				0C9E32A62503DA04002D2A2E /* API.swift in Sources */,
 				0C2271B22506A1B1002BA0F3 /* DetailViewController.swift in Sources */,
+				0CDBF6A0250CEA3B00279B61 /* UIColor + extention.swift in Sources */,
+				0CDBF69B250BC62000279B61 /* RateInterval.swift in Sources */,
 				0C9E32B82503FBD8002D2A2E /* Date + extention.swift in Sources */,
 				0CD3DE112503A2E9009EBF3B /* NetworkService.swift in Sources */,
+				0CBC559F250A42E800116566 /* DayCell.swift in Sources */,
 				0CD3DE1C2503D0F6009EBF3B /* DateWrapped.swift in Sources */,
 				0C2271F2250792FB002BA0F3 /* DetailRateCell.swift in Sources */,
+				0CDBF69E250CE9DF00279B61 /* RateCellConfigure.swift in Sources */,
 				0C9E32AE2503DABE002D2A2E /* MainPresenter.swift in Sources */,
 				0CD3DE1E2503D115009EBF3B /* Rate.swift in Sources */,
 				0C9E32A82503DA15002D2A2E /* APISceme.swift in Sources */,
+				0CDBF6A4250D168000279B61 /* Router.swift in Sources */,
 				0CD3DE142503D047009EBF3B /* RateWrapped.swift in Sources */,
 				0C9E32BA250400D1002D2A2E /* GraphCell.swift in Sources */,
 				0C9E32BD2504EE0D002D2A2E /* GraphView.swift in Sources */,
 				0C9E32B42503F992002D2A2E /* ModuleBuilder.swift in Sources */,
 				0C9E32B22503F92D002D2A2E /* DateFormatter + extention.swift in Sources */,
+				0CBC5599250938A500116566 /* RateLabel.swift in Sources */,
 				0CD3DDFE2503A29C009EBF3B /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -13,25 +13,29 @@ protocol MainViewProtocol: class {
 }
 
 protocol MainPresenterProtocol {
-    init(view: MainViewProtocol, networkService: NetworkServiceProtocol)
+    init(view: MainViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol)
     func loadTimeSeriesRates()
+    func didSelectRate(rates: [Rate], selectedRate: Rate)
 }
 
 class MainPresenter: MainPresenterProtocol {
-    
+
     // MARK: - Properies
-    
+
     weak var view: MainViewProtocol!
+    var router: RouterProtocol
     let networkService: NetworkServiceProtocol
+    
     
     private let dateFormatter = DateFormatter()
     private let calendar = Calendar.current
     
     // MARK: - Init
     
-    required init(view: MainViewProtocol, networkService: NetworkServiceProtocol) {
+    required init(view: MainViewProtocol, networkService: NetworkServiceProtocol, router: RouterProtocol) {
         self.view = view
         self.networkService = networkService
+        self.router = router
     }
     
     // MARK: - Methods
@@ -62,6 +66,10 @@ class MainPresenter: MainPresenterProtocol {
                 }
             }
         }
+    }
+    
+    func didSelectRate(rates: [Rate], selectedRate: Rate) {
+        router.showDetailViewController(withRates: rates, selectedRate: selectedRate)
     }
 }
 

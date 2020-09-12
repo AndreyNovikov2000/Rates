@@ -15,4 +15,10 @@ extension Date {
         let calendar = Calendar.current
         return calendar.date(byAdding: .day, value: daysAgo, to: today) ?? Date()
     }
+    
+    func getTimeFromCurretnDate(withComponent component: Calendar.Component, componentValue value: Int) -> Date {
+         let today = Date()
+         let calendar = Calendar.current
+         return calendar.date(byAdding: component, value: value, to: today) ?? Date()
+     }
 }

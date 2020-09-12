@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Combine
+
 
 class DetailViewController: UIViewController {
     
@@ -14,17 +16,19 @@ class DetailViewController: UIViewController {
     
     var presenter: DetailPresenterProtocol?
     
-
     // MARK: - Private properties
     
     private var selectedRate: Rate?
     private var rates: [Rate]?
+    private var timeIntervalRates: [Rate]?
+    
     
     private var collectionView: UICollectionView!
     private var dataSource: UICollectionViewDiffableDataSource<DetailSectionType, Rate>!
     
-    private enum DetailSectionType: Int, CaseIterable {
+    enum DetailSectionType: Int, CaseIterable {
         case detailCell
+        case dayCell
     }
     
     
@@ -35,24 +39,27 @@ class DetailViewController: UIViewController {
         
         presenter?.getRate()
         presenter?.getRates()
+        presenter?.getRequestsTimeInterval(withRateInterval: RateInterval())
         
         setupNavigationController()
         setupCollectionView()
         setupDataSource()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         setupNavigationController()
     }
-
+    
     // MARK: - Private methods
     
     private func reloadData() {
         var snapshot = NSDiffableDataSourceSnapshot<DetailSectionType, Rate>.init()
+        
         snapshot.appendSections(DetailSectionType.allCases)
         snapshot.appendItems(rates ?? [], toSection: .detailCell)
+        snapshot.appendItems(timeIntervalRates ?? [], toSection: .dayCell)
         
         dataSource.apply(snapshot)
     }
@@ -74,9 +81,11 @@ extension DetailViewController {
         collectionView.backgroundColor = .backgroundBlack
         collectionView.collectionViewLayout = setupCompositionalLayout()
         collectionView.delegate = self
-    
+        
         collectionView.register(DetailRateCell.self, forCellWithReuseIdentifier: DetailRateCell.reuseId)
+        collectionView.register(DayCell.self, forCellWithReuseIdentifier: DayCell.reuseId)
         collectionView.register(GraphFooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: GraphFooterView.reuseId)
+        
         
         view.addSubview(collectionView)
     }
@@ -88,6 +97,8 @@ extension DetailViewController {
             switch section {
             case .detailCell:
                 return self.setupDetailSection()
+            case .dayCell:
+                return self.setupDaySection()
             }
         }
         
@@ -96,7 +107,6 @@ extension DetailViewController {
     
     
     private func setupDetailSection() -> NSCollectionLayoutSection {
-        
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets.leading = 10
@@ -106,14 +116,31 @@ extension DetailViewController {
         group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10)
         
         let section = NSCollectionLayoutSection(group: group)
-        let footerView = setupBoundarySupplementaryItemForDetailSection()
-        section.boundarySupplementaryItems = [footerView]
         section.orthogonalScrollingBehavior = .groupPaging
+        section.interGroupSpacing = 10
         section.contentInsets.top = 10
         section.contentInsets.bottom = 16
         
         return section
     }
+    
+    private func setupDaySection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1 / 6), heightDimension: .fractionalHeight(1))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets.leading = 16
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        
+        let section = NSCollectionLayoutSection(group: group)
+        let footerView = setupBoundarySupplementaryItemForDetailSection()
+        section.boundarySupplementaryItems = [footerView]
+        section.orthogonalScrollingBehavior = .continuous
+        section.contentInsets.bottom = 10
+        
+        return section
+    }
+    
     
     
     private func setupBoundarySupplementaryItemForDetailSection() -> NSCollectionLayoutBoundarySupplementaryItem {
@@ -122,22 +149,23 @@ extension DetailViewController {
         return item
     }
     
+    
     private func setupDataSource() {
         dataSource = UICollectionViewDiffableDataSource<DetailSectionType, Rate>.init(collectionView: collectionView, cellProvider: { (collectionView, indexPath, rate) -> UICollectionViewCell? in
             guard let section = DetailSectionType(rawValue: indexPath.section) else { return nil }
             
             switch section {
             case .detailCell:
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: DetailRateCell.reuseId, for: indexPath) as? DetailRateCell
-                cell?.setup(withRate: rate)
-                return cell
+                return collectionView.dequeuCell(withValue: rate, forIndexPath: indexPath, ofType: DetailRateCell.self)
+            case .dayCell:
+                return collectionView.dequeuCell(withValue: rate, forIndexPath: indexPath, ofType: DayCell.self)
             }
         })
         
         
         dataSource.supplementaryViewProvider = { (collectionView, kind, indexPath) -> UICollectionReusableView? in
             let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: GraphFooterView.reuseId, for: indexPath) as? GraphFooterView
-            footerView?.backgroundColor = .orange
+            footerView?.configure(withRate: self.selectedRate)
             return footerView
         }
         
@@ -150,10 +178,31 @@ extension DetailViewController {
 
 extension DetailViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let section = DetailSectionType(rawValue: indexPath.section) else { return }
         guard let rate = dataSource.itemIdentifier(for: indexPath) else { return }
         guard let rates = rates else { return }
-        let detailViewController = Builder.buildDetailModule(withRates: rates, selectedRate: rate)
-        navigationController?.pushViewController(detailViewController, animated: true)
+        
+        
+        switch section {
+        case .detailCell:
+            presenter?.didSelectRate(rates: rates, selectedRate: rate)
+        case .dayCell:
+            print(indexPath)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let section = DetailSectionType(rawValue: indexPath.section) else { return }
+        
+        switch section {
+        case .detailCell:
+            break
+        case .dayCell:
+            let dayCell = collectionView.cellForItem(at: indexPath) as? DayCell
+            if indexPath.item == 0  {
+                dayCell?.isSelected = true
+            }
+        }
     }
 }
 
@@ -166,6 +215,10 @@ extension DetailViewController: DetailViewProtocol {
     
     func setRates(_ rates: [Rate]) {
         self.rates = rates
+    }
+    
+    func setRequestsTimeInterval(_ rates: [Rate]) {
+        self.timeIntervalRates = rates
     }
 }
 

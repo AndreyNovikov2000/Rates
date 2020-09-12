@@ -11,12 +11,15 @@ import Foundation
 protocol DetailViewProtocol: class {
     func setRate(_ rate:  Rate)
     func setRates(_ rates: [Rate])
+    func setRequestsTimeInterval(_ rates: [Rate])
 }
 
 protocol DetailPresenterProtocol  {
-    init(view: DetailViewProtocol, rates: [Rate], rate: Rate, networkService: NetworkServiceProtocol)
+    init(view: DetailViewProtocol, rates: [Rate], rate: Rate, networkService: NetworkServiceProtocol, router: RouterProtocol)
     func getRate()
     func getRates()
+    func getRequestsTimeInterval(withRateInterval rateInterval: RateInterval)
+    func didSelectRate(rates: [Rate], selectedRate: Rate)
 }
 
 class DetailPresenter: DetailPresenterProtocol {
@@ -24,15 +27,18 @@ class DetailPresenter: DetailPresenterProtocol {
     // MARK: - Properties
     
     weak var view: DetailViewProtocol!
+    var router: RouterProtocol?
+    var networkService: NetworkServiceProtocol
     
     private(set) var rate: Rate
     private(set) var rates: [Rate]
-    var networkService: NetworkServiceProtocol
+    
     
     // MARK: - Init
     
-    required init(view: DetailViewProtocol, rates: [Rate], rate: Rate, networkService: NetworkServiceProtocol) {
+    required init(view: DetailViewProtocol, rates: [Rate], rate: Rate, networkService: NetworkServiceProtocol, router: RouterProtocol) {
         self.view = view
+        self.router = router
         self.rate = rate
         self.networkService = networkService
         self.rates = rates
@@ -47,4 +53,33 @@ class DetailPresenter: DetailPresenterProtocol {
     func getRates() {
         view.setRates(rates)
     }
+    
+    func getRequestsTimeInterval(withRateInterval rateInterval: RateInterval) {
+        var rates = [Rate]()
+        
+        rateInterval.daysInterval.forEach { (day) in
+            var rate = Rate()
+            rate.fromDate = Date().getDaysAgoFromCurretnDate(days: day)
+            rates.append(rate)
+        }
+        
+        rateInterval.monthInterval.forEach { (month) in
+            var rate = Rate()
+            rate.fromDate = Date().getTimeFromCurretnDate(withComponent: .month, componentValue: month)
+            rates.append(rate)
+        }
+        
+        rateInterval.yearInterval.forEach { (year) in
+            var rate = Rate()
+            rate.fromDate = Date().getTimeFromCurretnDate(withComponent: .year, componentValue: year)
+            rates.append(rate)
+        }
+    
+        view.setRequestsTimeInterval(rates)
+    }
+    
+    func didSelectRate(rates: [Rate], selectedRate: Rate) {
+        router?.showDetailViewController(withRates: rates, selectedRate: selectedRate)
+    }
 }
+

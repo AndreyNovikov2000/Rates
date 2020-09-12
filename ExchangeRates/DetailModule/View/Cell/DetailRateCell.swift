@@ -8,8 +8,8 @@
 
 import UIKit
 
-class DetailRateCell: UICollectionViewCell {
-    
+class DetailRateCell: UICollectionViewCell, RateCellConfigure {
+
     static let reuseId = "GraphFooterView"
     
     // MARK: - UI
@@ -57,11 +57,13 @@ class DetailRateCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
     
+        layer.cornerRadius = 12
     }
     
     // MARK: - Public methods
     
-    func setup(withRate rate: Rate) {
+    func configure<H>(withValue value: H) where H : Hashable {
+        guard let rate = value as? Rate else { return }
         graphView.redraw(withValues: rate.rateValus.map { CGFloat($0) })
         rateNameLabel.text = rate.name
         rateCostLabel.text = rate.lastRateValue
@@ -89,10 +91,5 @@ class DetailRateCell: UICollectionViewCell {
         rateCostLabel.topAnchor.constraint(equalTo: rateNameLabel.bottomAnchor, constant: 4).isActive = true
         rateCostLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
         rateCostLabel.trailingAnchor.constraint(equalTo: graphView.leadingAnchor, constant: -16).isActive = true
-
     }
-}
-
-extension UIColor {
-    static let backgroundBlack = UIColor(red: 0.1098039216, green: 0.1098039216, blue: 0.1176470588, alpha: 1)
 }
